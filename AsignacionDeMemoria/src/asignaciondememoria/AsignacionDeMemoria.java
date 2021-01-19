@@ -16,7 +16,7 @@ public class AsignacionDeMemoria {
         
         //Declarar un ArrayList
         ArrayList<Integer> listaNumerica = new ArrayList<>();
-        
+                
         int n=0, i=0;
         //Almacenamos los datos positivos en el ArrayList y deja de guardar datos cuando un numero es negativo.
         do{
