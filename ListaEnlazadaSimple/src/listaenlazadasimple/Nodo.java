@@ -1,20 +1,26 @@
 package listaenlazadasimple;
 
 public class Nodo {
-    private int elemento;
+    // Variable en la cual se va a guardar el valor.
+    private int valor;
+    // Variable para enlazar los nodos.
     private Nodo siguiente;
-
-    public Nodo(int elemento, Nodo siguiente) {
-        this.elemento = elemento;
-        this.siguiente = siguiente;
+    /**
+     * Constructor que inicializamos el valor de las variables.
+     */
+    public void Nodo(){
+        this.valor = 0;
+        this.siguiente = null;
+    }
+    
+    // Métodos get y set para los atributos.
+    
+    public int getValor() {
+        return valor;
     }
 
-    public int getElemento() {
-        return elemento;
-    }
-
-    public void setElemento(int elemento) {
-        this.elemento = elemento;
+    public void setValor(int valor) {
+        this.valor = valor;
     }
 
     public Nodo getSiguiente() {
@@ -23,7 +29,5 @@ public class Nodo {
 
     public void setSiguiente(Nodo siguiente) {
         this.siguiente = siguiente;
-    }
-    
-    
+    }   
 }
