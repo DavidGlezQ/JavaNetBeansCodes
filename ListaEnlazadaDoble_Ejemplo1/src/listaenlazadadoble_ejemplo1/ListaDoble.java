@@ -74,7 +74,7 @@ public class ListaDoble {
         }
     }
     
-    public Boolean buscar(String dato){ //Metodo paara buscar un dato en la lista.
+    public boolean buscar(String dato){ //Metodo paara buscar un dato en la lista.
         Nodo temp = inicio;
         while(temp!=null){ //Recorremos la lista.
             if(temp.getDato().equals(dato)){
