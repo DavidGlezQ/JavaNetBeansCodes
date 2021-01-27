@@ -32,4 +32,18 @@ public class ArbolBinario {
             }
         }
     }
+    
+    //Metodo para recorrero el arbol en orden.
+    public void inOrden(NodoArbol ra){
+        if(ra!=null){
+            inOrden(ra.hijoizquierdo);
+            System.out.println(ra.dato);
+            inOrden(ra.hijoDerecho);
+        }
+    }
+    
+    //Metodo para saber si el arbol esta vacio.
+    public boolean estaVacio(){
+        return raiz == null;
+    }
 }
