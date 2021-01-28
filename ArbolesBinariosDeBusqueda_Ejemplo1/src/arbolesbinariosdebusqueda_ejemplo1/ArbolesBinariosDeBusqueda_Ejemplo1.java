@@ -13,7 +13,8 @@ public class ArbolesBinariosDeBusqueda_Ejemplo1 {
                 opc = Integer.parseInt(JOptionPane.showInputDialog(null,
                         "1.- Agregar un Nodo\n"
                                 + "2.- Recorrer el arbol en orden\n"
-                                + "3.- Salir\n" 
+                                + "3.- Recorrer el arbol en pre orden\n"
+                                + "4.- Salir\n" 
                                 + "Elije una opcion", JOptionPane.QUESTION_MESSAGE));
                 switch(opc){
                     case 1:
@@ -30,8 +31,15 @@ public class ArbolesBinariosDeBusqueda_Ejemplo1 {
                             JOptionPane.showMessageDialog(null, "El arbol esta vacio", "", 
                                 JOptionPane.INFORMATION_MESSAGE);
                         }
-                        break; 
                     case 3:   
+                        if(!arbolito.estaVacio()){
+                            arbolito.preOrden(arbolito.raiz);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "El arbol esta vacio", "", 
+                                JOptionPane.INFORMATION_MESSAGE);
+                        }    
+                        break; 
+                    case 4:   
                         JOptionPane.showMessageDialog(null, "Aplicacion terminada", "", 
                                 JOptionPane.INFORMATION_MESSAGE);
                         break;     
@@ -42,7 +50,7 @@ public class ArbolesBinariosDeBusqueda_Ejemplo1 {
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "ERROR" + e.getMessage());
             }
-        } while(opc!=3);
+        } while(opc!=4);
     }
-    
+    /*De la vista nace el conocimiento y de la practica hace el maestro*/
 }
