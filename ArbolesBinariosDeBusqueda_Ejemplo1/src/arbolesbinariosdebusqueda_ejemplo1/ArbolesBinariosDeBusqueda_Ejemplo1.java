@@ -14,9 +14,12 @@ public class ArbolesBinariosDeBusqueda_Ejemplo1 {
                         "1.- Agregar un Nodo\n"
                                 + "2.- Recorrer el arbol en orden\n"
                                 + "3.- Recorrer el arbol en pre orden\n"
-                                + "4.- Salir\n" 
+                                + "4.- Recorrer el arbol en post orden\n"
+                                + "5.- Buscar un nodo en el arbol\n"
+                                + "6.- Salir\n" 
                                 + "Elije una opcion", JOptionPane.QUESTION_MESSAGE));
                 switch(opc){
+                    //Opcion para insertar nodos en el arbol.
                     case 1:
                         elemento = Integer.parseInt(JOptionPane.showInputDialog(null, 
                                 "Ingresa el numero del nodo", JOptionPane.QUESTION_MESSAGE));
@@ -24,6 +27,7 @@ public class ArbolesBinariosDeBusqueda_Ejemplo1 {
                                 "Ingresa el nombre del nodo", JOptionPane.QUESTION_MESSAGE);
                         arbolito.agregarNodo(elemento, nombre);
                         break;
+                    //Opcion para mostrar el arbol en orden normal.   
                     case 2:   
                         if(!arbolito.estaVacio()){
                             arbolito.inOrden(arbolito.raiz);
@@ -31,6 +35,8 @@ public class ArbolesBinariosDeBusqueda_Ejemplo1 {
                             JOptionPane.showMessageDialog(null, "El arbol esta vacio", "", 
                                 JOptionPane.INFORMATION_MESSAGE);
                         }
+                        break;
+                    //Opcion para mostrar el arbol en pre orden.    
                     case 3:   
                         if(!arbolito.estaVacio()){
                             arbolito.preOrden(arbolito.raiz);
@@ -39,10 +45,37 @@ public class ArbolesBinariosDeBusqueda_Ejemplo1 {
                                 JOptionPane.INFORMATION_MESSAGE);
                         }    
                         break; 
+                    //Opcion para mostrar el arbol en post orden.    
                     case 4:   
+                        if(!arbolito.estaVacio()){
+                            arbolito.postOrden(arbolito.raiz);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "El arbol esta vacio", "", 
+                                JOptionPane.INFORMATION_MESSAGE);
+                        }    
+                        break; 
+                    //opcion para buscar un nodo en el arbol.    
+                    case 5:   
+                        if(!arbolito.estaVacio()){
+                            elemento = Integer.parseInt(JOptionPane.showInputDialog(null, 
+                                "Ingresa el numero del nodo que desea buscar", 
+                                JOptionPane.QUESTION_MESSAGE));
+                            if(arbolito.buscarNodo(elemento) == null){
+                                System.out.println("Nodo no encontrado");
+                            } else {
+                                System.out.println("Nodo encontrado: " + arbolito.buscarNodo(elemento));
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(null, "El arbol esta vacio", "", 
+                                JOptionPane.INFORMATION_MESSAGE);
+                        }    
+                        break;      
+                    //Opcion para terminar la aplicacion
+                    case 6:   
                         JOptionPane.showMessageDialog(null, "Aplicacion terminada", "", 
                                 JOptionPane.INFORMATION_MESSAGE);
                         break;     
+                    //Opcion default.    
                     default:
                         JOptionPane.showMessageDialog(null, "Opcion incorrecta", "",
                                 JOptionPane.INFORMATION_MESSAGE);
@@ -50,7 +83,7 @@ public class ArbolesBinariosDeBusqueda_Ejemplo1 {
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "ERROR" + e.getMessage());
             }
-        } while(opc!=4);
+        } while(opc!=6);
     }
     /*De la vista nace el conocimiento y de la practica hace el maestro*/
 }
