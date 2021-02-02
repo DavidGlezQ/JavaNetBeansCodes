@@ -38,13 +38,14 @@ public class ArbolBinario {
         return raiz == null;
     }
     
-    //METODOS PARA RECORRER UN ARBOL BINARIO DE DIFERENTES MANERAS.
+    //ARBOL: 8 3 10 14 13 1 6 4 7
+    //METODOS PARA RECORRER UN ARBOL BINARIO DE DIFERENTES MANERAS. 
     //Metodo para recorrero el arbol en orden.
     public void inOrden(NodoArbol ra){
         if(ra!=null){
-            inOrden(ra.hijoizquierdo);
-            System.out.print(ra.dato + ", ");
-            inOrden(ra.hijoDerecho);
+            inOrden(ra.hijoizquierdo); //Nodo izquierdo
+            System.out.print(ra.dato + ", "); //Raiz
+            inOrden(ra.hijoDerecho); //Nodo derecho.
         }
     }
   
